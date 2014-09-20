@@ -27,7 +27,9 @@ class API < Grape::API
 
   helpers do
     def current_user
-      User.active.find_by(access_token: headers["X-Access-Token"])
+      @current_user ||= User.active.find_by(access_token: headers["X-Access-Token"])
+      return nil unless @current_user
+      @current_user
     end
     def authenticate!
       error!('Invalid Access Token', 401) unless current_user
