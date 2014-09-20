@@ -1,4 +1,4 @@
-box: wercker/ruby
+box: nafu/ubuntu12.04-ruby2.1.1@1.0.1
 services:
     - wercker/mysql
 build:
