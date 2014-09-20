@@ -26,5 +26,9 @@ module Grfxme
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.middleware.use(Rack::Config) do |env|
+      env['api.tilt.root']   = Rails.root.join 'app', 'views', 'api'
+      # env['api.tilt.layout'] = Rails.root.join 'app', 'views', 'layouts', 'api.jbuilder'
+    end
   end
 end

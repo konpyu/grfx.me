@@ -1,40 +1,95 @@
 source 'https://rubygems.org'
 
+ruby '2.1.1'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.1'
-# Use mysql as the database for Active Record
-gem 'mysql2'
-# Use SCSS for stylesheets
+gem 'rails', '4.1.5'
 gem 'sass-rails', '~> 4.0.3'
-# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'therubyracer', platforms: :ruby
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'rails_config'
+gem 'tapp'
+gem 'quiet_assets'
+gem 'haml-rails'
+gem 'unicorn'
+gem 'whenever'
+gem 'grape', '~> 0.8.0'
+gem 'grape-jbuilder', github: 'pocake/grape-jbuilder', branch: 'layout'
+gem 'font-awesome-rails'
+gem 'mysql2'
+gem 'kaminari'
+gem 'ngannotate-rails'
+gem 'factory_girl_rails'
+gem 'sanitize', '3.0.0'
+gem 'bcrypt-ruby'
+gem 'i18n-js'
+gem 'twitter'
+gem 'fb_graph'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# File Upload
+gem 'carrierwave'
+gem 'fog'
+gem 'unf'
+gem 'mini_magick'
+gem 'streamio-ffmpeg'
+gem 'mimemagic'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# social login
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# gem 'redis-namespace'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# sidekiq
+gem 'sidekiq'
+gem 'sinatra', require: false
 
+gem 'bower-rails', '~> 0.7.3'
+
+gem 'roadie', '~> 2.4.3' # for HTML Email
+gem 'activerecord-import' # bulk-insert to speedup insert SQL
+
+# notify
+gem 'airbrake'
+gem 'hipchat'
+
+gem 'aws-sdk'
+
+group :development do
+  gem 'spring'
+  gem 'erb2haml'
+  gem 'rails-erd'
+  gem 'letter_opener'
+  gem 'capistrano', '~> 3.1.0'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-sidekiq'
+  gem 'rubocop'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'puma'
+end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.1'
+  gem 'rspec-mocks'
+  gem 'rspec-activemodel-mocks'
+  gem 'json_spec'
+  gem 'json_expressions'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-remote'
+  gem 'pry-remote-auto'
+  gem 'awesome_print'
+  gem 'database_rewinder'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'lograge'
+  gem 'faker'
+end
