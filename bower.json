@@ -1,0 +1,22 @@
+{
+  "name": "grfxme",
+  "version": "0.0.0",
+  "authors": [
+    "kon.yuichi"
+  ],
+  "description": "hoge",
+  "keywords": [
+    "pict"
+  ],
+  "dependencies": {
+    "angular": "1.3.0-rc.2",
+    "angular-route": "1.3.0-rc.2",
+    "angular-sanitize": "1.3.0-rc.2",
+    "angular-resource": "1.3.0-rc.2",
+    "angular-cookies": "1.3.0-rc.2",
+    "angular-animate": "1.3.0-rc.2",
+    "angular-ui-router": "0.2.11",
+    "moment": "2.8.2"
+  },
+  "license": "MIT"
+}
