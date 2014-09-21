@@ -14,12 +14,14 @@
 ActiveRecord::Schema.define(version: 20140921022014) do
 
   create_table "photos", force: true do |t|
-    t.integer  "user_id",                              null: false
+    t.integer  "user_id",                                        null: false
     t.float    "lat",           limit: 24
     t.float    "lng",           limit: 24
     t.text     "comment"
     t.integer  "comment_count",            default: 0
     t.string   "address"
+    t.string   "status",                   default: "published"
+    t.string   "key",                                            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
