@@ -29,6 +29,7 @@ gem 'bcrypt-ruby'
 gem 'i18n-js'
 gem 'twitter'
 gem 'fb_graph'
+gem "acts-as-taggable-on"
 
 # File Upload
 gem 'carrierwave'
