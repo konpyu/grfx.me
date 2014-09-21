@@ -37,4 +37,5 @@ class API < Grape::API
   end
 
   mount UserAPI
+  mount TagAPI
 end
