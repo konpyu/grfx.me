@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  acts_as_tagger
+
   scope :active, -> { where(active_flag: true) }
   before_save :ensure_access_token
+  has_many :photos
 
   def ensure_access_token
     if self.access_token.blank?
