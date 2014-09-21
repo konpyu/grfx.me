@@ -7,7 +7,6 @@ class UserAPI < API
       @user = User.active.where(urlname: params[:urlname]).first!
     end
 
-    desc 'update user info'
     params do
       optional :profile,     type: String
       optional :website_url, type: String
