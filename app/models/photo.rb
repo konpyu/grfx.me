@@ -1,6 +1,7 @@
 class Photo < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tags
+  acts_as_commentable
   belongs_to :user
 
   before_save :ensure_key

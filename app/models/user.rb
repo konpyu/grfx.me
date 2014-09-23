@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   scope :active, -> { where(active_flag: true) }
   before_save :ensure_access_token
   has_many :photos
+  has_many :comments
 
   def ensure_access_token
     if self.access_token.blank?
