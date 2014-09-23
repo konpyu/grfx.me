@@ -43,6 +43,7 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.4.1)
       activerecord (>= 3.2, < 5)
+    acts_as_commentable (4.0.1)
     addressable (2.3.6)
     airbrake (4.1.0)
       builder
@@ -590,6 +591,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-import
   acts-as-taggable-on
+  acts_as_commentable
   airbrake
   awesome_print
   aws-sdk

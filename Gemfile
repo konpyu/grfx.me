@@ -29,7 +29,8 @@ gem 'bcrypt-ruby'
 gem 'i18n-js'
 gem 'twitter'
 gem 'fb_graph'
-gem "acts-as-taggable-on"
+gem 'acts-as-taggable-on'
+gem 'acts_as_commentable'
 
 # File Upload
 gem 'carrierwave'
@@ -93,4 +94,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'lograge'
   gem 'faker'
+  gem 'guard'
+  gem 'guard-rspec', require: false
 end
