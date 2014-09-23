@@ -40,4 +40,5 @@ class API < Grape::API
   mount TagAPI
   mount PhotoAPI
   mount CommentAPI
+  mount LikeAPI
 end

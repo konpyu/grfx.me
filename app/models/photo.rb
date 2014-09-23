@@ -1,4 +1,5 @@
 class Photo < ActiveRecord::Base
+  acts_as_votable
   acts_as_taggable
   acts_as_taggable_on :tags
   acts_as_commentable
