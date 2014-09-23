@@ -44,6 +44,7 @@ GEM
     acts-as-taggable-on (3.4.1)
       activerecord (>= 3.2, < 5)
     acts_as_commentable (4.0.1)
+    acts_as_votable (0.10.0)
     addressable (2.3.6)
     airbrake (4.1.0)
       builder
@@ -592,6 +593,7 @@ DEPENDENCIES
   activerecord-import
   acts-as-taggable-on
   acts_as_commentable
+  acts_as_votable
   airbrake
   awesome_print
   aws-sdk
