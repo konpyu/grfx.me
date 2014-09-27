@@ -31,6 +31,7 @@ gem 'twitter'
 gem 'fb_graph'
 gem 'acts-as-taggable-on'
 gem 'acts_as_commentable'
+gem 'acts_as_votable'
 
 # File Upload
 gem 'carrierwave'
