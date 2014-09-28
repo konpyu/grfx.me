@@ -4,9 +4,25 @@ module API
       params do
         requires :urlname, type: String, regexp: /\A[a-z0-9][a-z0-9_]{2,15}\z/
       end
-      get ":urlname" do
-        @user = User.active.where(urlname: params[:urlname]).first!
-        present @user, with: Entities::User
+
+      namespace ':urlname' do
+        before do
+          @user = User.active.where(urlname: params[:urlname]).first!
+        end
+        get '' do
+          present @user, with: Entities::User
+        end
+
+        params do
+          optional :count,   type: Integer
+        end
+        get 'photos' do
+          count = params[:count] || 12
+          photos = @user.photos
+                        .order(created_at: :desc)
+                        .limit(count)
+          present photos, with: Entities::Photo
+        end
       end
 
       params do

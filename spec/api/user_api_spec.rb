@@ -5,6 +5,26 @@ describe 'UserAPI' do
 
   let(:user) { FactoryGirl.create(:user) }
 
+  describe 'GET /users/:urlname/photos' do
+    before do
+      12.times do
+        FactoryGirl.create(:photo, user: user)
+      end
+    end
+
+    it 'should return 12 photos by default' do
+      get "/api/users/#{user.urlname}/photos"
+      expect(response.status).to eq(200)
+      expect(json_response.length).to eq(12)
+    end
+
+    it 'should return count option number of photo' do
+      get "/api/users/#{user.urlname}/photos?count=10"
+      expect(response.status).to eq(200)
+      expect(json_response.length).to eq(10)
+    end
+  end
+
   describe 'GET /users/:urlname' do
     it 'should return user' do
       get "/api/users/#{user.urlname}"

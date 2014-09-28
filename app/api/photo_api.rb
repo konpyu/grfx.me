@@ -1,6 +1,16 @@
 module API
   class PhotoAPI < Grape::API
     resource :photos do
+
+      params do
+        optional :count,   type: Integer
+      end
+      get '' do
+        count = params[:count] || 12
+        photos = Photo.order(created_at: :desc).limit(count)
+        present photos, with: Entities::Photo
+      end
+
       namespace ':key' do
         before do
           @photo = Photo.find_by(key: params[:key])

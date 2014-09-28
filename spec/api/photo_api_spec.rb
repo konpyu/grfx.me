@@ -5,6 +5,26 @@ describe 'PhotoAPI' do
 
   let(:user) { FactoryGirl.create(:user) }
 
+  describe 'GET /photos' do
+    before do
+      12.times do
+        FactoryGirl.create(:photo, user: user)
+      end
+    end
+
+    it 'should return 12 public photos by default' do
+      get "/api/photos"
+      expect(response.status).to eq(200)
+      expect(json_response.length).to eq(12)
+    end
+
+    it 'should return count option number of public photo' do
+      get "/api/photos?count=10"
+      expect(response.status).to eq(200)
+      expect(json_response.length).to eq(10)
+    end
+  end
+
   describe 'GET /photos/:key' do
     let(:photo) { FactoryGirl.create(:photo, user: user) }
     #  before do
