@@ -7,6 +7,9 @@ describe 'PhotoAPI' do
 
   describe 'GET /photos/:key' do
     let(:photo) { FactoryGirl.create(:photo, user: user) }
+    #  before do
+    #    user.likes(photo)
+    #  end
     it 'should return photo' do
       get "/api/photos/#{photo.key}"
       expect(response.status).to eq(200)
@@ -74,10 +77,10 @@ describe 'PhotoAPI' do
       it 'should return updated photo' do
         put "/api/photos/#{photo.key}", update_photo_param, { 'X-Access-Token' => user.access_token }
         expect(response.status).to eq(200)
-        expect(json_response["photo"]["lat"]).to eq(45.0625)
-        expect(json_response["photo"]["lng"]).to eq(141.353611)
-        expect(json_response["photo"]["address"]).to eq('札幌市中央区北1条西2-1-1')
-        expect(json_response["photo"]["comment"]).to eq('SAPPORO TOKEIDAI')
+        expect(json_response["lat"]).to eq(45.0625)
+        expect(json_response["lng"]).to eq(141.353611)
+        expect(json_response["address"]).to eq('札幌市中央区北1条西2-1-1')
+        expect(json_response["comment"]).to eq('SAPPORO TOKEIDAI')
       end
     end
     context 'when not authorized' do

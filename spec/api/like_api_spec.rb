@@ -19,7 +19,7 @@ describe 'LikeAPI' do
     it "should return user list which do like" do
       get "/api/photos/#{photo.key}/likes"
       expect(response.status).to eq(200)
-      expect(json_response["likes"].length).to eq(3)
+      expect(json_response.length).to eq(3)
     end
   end
 
@@ -27,7 +27,6 @@ describe 'LikeAPI' do
     context 'when authorized' do
       it "should create like successfully" do
         post "/api/photos/#{photo.key}/likes", nil,  { 'X-Access-Token' => user.access_token }
-        puts json_response
         expect(response.status).to eq(201)
       end
     end

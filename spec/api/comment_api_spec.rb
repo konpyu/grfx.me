@@ -15,8 +15,8 @@ describe 'CommentAPI' do
       it 'should return updated user' do
         post "/api/photos/#{photo.key}/comments", new_comment, { 'X-Access-Token' => user.access_token }
         expect(response.status).to eq(201)
-        expect(json_response["comment"]["comment"]).to eq("I like your photo")
-        expect(json_response["comment"]["user_id"]).to eq(user.id)
+        expect(json_response["comment"]).to eq("I like your photo")
+        expect(json_response["user_id"]).to eq(user.id)
       end
     end
     context 'when not authorized' do
@@ -36,7 +36,7 @@ describe 'CommentAPI' do
       it 'should update successfully when try to update owned comment' do
         put "/api/comments/#{comment.id}", { comment: "super schooter happy" } , { 'X-Access-Token' => user.access_token }
         expect(response.status).to eq(200)
-        expect(json_response["comment"]["comment"]).to eq("super schooter happy")
+        expect(json_response["comment"]).to eq("super schooter happy")
       end
       it 'should return error when try to update others comments' do
         put "/api/comments/#{others_comment.id}", { comment: "super schooter happy" } , { 'X-Access-Token' => user.access_token }
