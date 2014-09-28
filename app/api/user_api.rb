@@ -2,7 +2,7 @@ module API
   class UserAPI < Grape::API
     resource :users do
       params do
-        requires :urlname, type: String, regexp: /\A[a-z0-9][a-z0-9_]{2,15}\z/
+        requires :urlname, type: String
       end
 
       namespace ':urlname' do
