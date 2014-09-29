@@ -1,6 +1,6 @@
 module API
   class SessionAPI < Grape::API
-    namespace ":session" do
+    namespace ":sessions" do
 
       params do
         requires :urlname,   type: String

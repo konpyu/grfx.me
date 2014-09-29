@@ -42,5 +42,6 @@ module API
     mount PhotoAPI
     mount CommentAPI
     mount LikeAPI
+    mount SessionAPI
   end
 end
